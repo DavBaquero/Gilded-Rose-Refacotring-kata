@@ -1,6 +1,6 @@
-package com.gildedrose;
+package edu.badpals.gildedrose.item;
 
-public class Item {
+public abstract class Item implements Updatable{
 
     public String name;
 

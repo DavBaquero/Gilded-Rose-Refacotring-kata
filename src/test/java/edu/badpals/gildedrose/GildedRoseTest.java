@@ -1,5 +1,6 @@
-package com.gildedrose;
+package edu.badpals.gildedrose;
 
+import edu.badpals.gildedrose.item.Item;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
