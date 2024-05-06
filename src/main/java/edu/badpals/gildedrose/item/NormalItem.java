@@ -34,6 +34,14 @@ public class NormalItem extends Item{
     @Override
     public void update_quality() {
         this.update_sellIn();
-        this.setQuality(getQuality() - 1);
+        if(this.getQuality() > 50)
+            this.setQuality(50);
+        if(this.getSellIn() < 0)
+            this.setQuality(getQuality() - 2);
+        else
+            this.setQuality(getQuality() - 1);
+        if(this.getQuality() < 0)
+            this.setQuality(0);
+
     }
 }
