@@ -14,11 +14,11 @@ class GildedRose {
         this.items = items;
     }
 
-    public void updateItem(){
+   /* public void updateItem(){
         for(Updatable item: this.items){
             item.update_sellIn();
             item.update_quality();
         }
-    }
+    }*/
 }
 
