@@ -17,4 +17,22 @@ public class TestNormalItem {
         assertEquals(19, item.getQuality());
         assertEquals(9, item.getSellIn());
     }
+
+    @Test
+    void overQualityTest() {
+
+        NormalItem item = new NormalItem("Dragon's Chest", 20, 60);
+        item.update_quality();
+        assertEquals(49, item.getQuality());
+        assertEquals(19, item.getSellIn());
+    }
+
+    @Test
+    void spoiledItemTest() {
+
+        NormalItem item = new NormalItem("Golden Breastplate", -2, 10);
+        item.update_quality();
+        assertEquals(8, item.getQuality());
+        assertEquals(-3, item.getSellIn());
+    }
 }
