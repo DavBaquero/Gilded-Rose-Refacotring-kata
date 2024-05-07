@@ -1,8 +1,8 @@
 package edu.badpals.gildedrose.item;
 
-public class AgedBrie extends Item{
+public class Conjured extends Item{
 
-    public AgedBrie(String name, int sellIn, int quality) {
+    public Conjured(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
@@ -34,9 +34,10 @@ public class AgedBrie extends Item{
     @Override
     public void update_quality() {
         this.update_sellIn();
-        if (getSellIn() > 0)
-            this.setQuality(getQuality() + 1);
+        if(this.getSellIn() >= 0)
+            this.setQuality(getQuality() - 2);
         else
-            this.setQuality(getQuality() + 2);
+            this.setQuality(getQuality() - 4);
     }
+
 }
