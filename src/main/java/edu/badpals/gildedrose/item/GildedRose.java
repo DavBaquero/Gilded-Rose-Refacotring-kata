@@ -6,7 +6,7 @@ import edu.badpals.gildedrose.item.Updatable;
 import java.util.ArrayList;
 import java.util.List;
 
-class GildedRose {
+public class GildedRose {
     private List<Updatable> items = new ArrayList<Updatable>();
 
     public GildedRose() {}
@@ -29,7 +29,7 @@ class GildedRose {
     @Override
     public String toString() {
         StringBuilder inventario = new StringBuilder();
-        for (Updateable item : getItems()) {
+        for (Updatable item : getItems()) {
             inventario.append(item.toString());
             inventario.append('\n');
         }
