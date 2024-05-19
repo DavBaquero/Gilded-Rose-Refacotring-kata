@@ -7,18 +7,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 class GildedRose {
-    List<Updatable> items = new ArrayList<Updatable>();
+    private List<Updatable> items = new ArrayList<Updatable>();
 
-    public GildedRose(List<Updatable> items) {
+    public GildedRose() {}
 
-        this.items = items;
+    public List<Updatable> getItems(){
+        return this.items;
     }
 
-   /* public void updateItem(){
-        for(Updatable item: this.items){
+    public void addItem(Updatable item){
+        getItems().add(item);
+    }
+
+    public void updateItem(){
+        for(Updatable item: getItems()){
             item.update_sellIn();
             item.update_quality();
         }
-    }*/
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder inventario = new StringBuilder();
+        for (Updateable item : getItems()) {
+            inventario.append(item.toString());
+            inventario.append('\n');
+        }
+        return inventario.toString();
+    }
 }
 
