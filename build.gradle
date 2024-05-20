@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 repositories {
@@ -12,16 +13,26 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
 }
 
-group = 'com.gildedrose'
+group = 'edu.badpals.gildedrose'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClassName = 'edu.badpals.gildedrose.App'
+}
 
 test {
     useJUnitPlatform()
 }
 
 task texttest(type: JavaExec) {
-    main = "com.gildedrose.TexttestFixture"
+    main = "edu.badpals.gildedrose.App"
     classpath = sourceSets.test.runtimeClasspath
     args "30"
 }
